@@ -1,19 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package es.juanramonsalgueromateos.sudoku;
+
+import java.util.Random;
 
 /**
  *
- * @author usuario
+ * @author Juan Ramón Salguero Mateos
  */
 public class Sudoku_Codigo {
     public int[][] matriz = new int[9][9];
-
+        Random azar = new Random();
+        int fila = azar.nextInt(9);
+        int columna = azar.nextInt(9);
+    
+    
     public int[][] cargar_juego() {
-    //matriz[1][2] = 3;para pruebas
+        
         matriz[0][2] = 9;
         matriz[0][0] = 1;
         matriz[0][5] = 8;
@@ -52,7 +53,7 @@ public class Sudoku_Codigo {
     }
     
     
-    // METODO PARA COMPROBAR LOS VALORES.
+    // Metodo para comprobar los valores.
     public boolean comprobar_valor(String valor1) {
 
         if (String.valueOf(valor1).equalsIgnoreCase("")) {
@@ -69,7 +70,7 @@ public class Sudoku_Codigo {
     }
     
     
-    //METODO PARA COMPROBAR FILAS.
+    //Metodo para comrpobar filas.
     public boolean existe_fila(int numero, int fila) {
 
         boolean resultado = false;
@@ -87,7 +88,7 @@ public class Sudoku_Codigo {
 
     }
 
-    //METODO PARA COMPROBAR COLUMNAS.
+    //Metodo para comprobar columnas.
     public boolean existe_columna(int numero, int columna) {
 
         boolean resultado = false;
@@ -103,14 +104,14 @@ public class Sudoku_Codigo {
 
     public boolean existe_caja(int valor, int fila, int columna) {
 
-        //VARIABLES.
+        //Variables.
         int minimo_fila;
         int maximo_fila;
         int minimo_columna;
         int maximo_columna;
         boolean resultado = false;
 
-        //DETERMINAMOS LAS FILAS DE LA CAJA.
+        //Determinamos las filas de la caja.
         if (fila >= 0 && fila < 3) {
             minimo_fila = 0;
             maximo_fila = 2;
@@ -122,7 +123,7 @@ public class Sudoku_Codigo {
             maximo_fila = 8;
         }
 
-        //DETERMINAMOS LAS COLUMNAS DE LA CAJA.
+        //Determinamos las columnas de la caja.
         if (columna >= 0 && columna < 3) {
             minimo_columna = 0;
             maximo_columna = 2;
@@ -134,7 +135,7 @@ public class Sudoku_Codigo {
             maximo_columna = 8;
         }
 
-        //RECORREMOS EL RANGO DE LA CAJA, Y BUSCAMOS EL VALOR.
+        //Recorremos el rango de la caja, y buscamos el valor.
         for (int f = minimo_fila; f <= maximo_fila; f++) {
             for (int c = minimo_columna; c <= maximo_columna; c++) {
                 if (valor == 0) {
@@ -148,7 +149,7 @@ public class Sudoku_Codigo {
             }
         }
         
-        //REGRESAMOS EL VALOR BOOLEANO.
+        //Regresamos el valor booleano(Azar).
         return resultado;
 
 
@@ -156,7 +157,7 @@ public class Sudoku_Codigo {
     }
 
 
-    //METODO QUE DETECTA SI EL JUEGO FUE TERMINADO.
+    //Metodo que detecta si el juego fue terminado.
 	public static boolean terminado( int[][] matriz ){
 
 		boolean resultado = true;
