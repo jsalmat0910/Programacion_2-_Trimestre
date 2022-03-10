@@ -97,19 +97,37 @@ public class App {
                 break;
             
             case 3:
-                for(int f=0; f <9; f++){
-                    for(int c=0; c <9; c++) {
+                for(int fila=0; fila <9; fila++){
+                    for(int columna=0; columna <9; columna++) {
                         int valor = azar.nextInt(9);
-                        matriz[f][c] = valor;
-                        if(existeFila(valor, f, matriz)) {
-                            if (existeColumna(valor, c, matriz)) {
-                                if (existeCaja(valor, f, c, matriz)) {
-                                    
-                                }
-                            }
-                        }  
+                        
+                        if (!comprobarIndice(fila)) {
+                            
+                        } //Comrpobamos si la columna esta en el rango.
+                        else if (!comprobarIndice(columna)) {
+                            
+                        } //Comprobamos que el valor esta en el rango.
+                        else if (!comprobarValor(valor)) {
+                            
+                        } //Comprobamos que se use casillas disponibles.
+                        else if (origen((fila - 1), (columna - 1), matriz)) {
+                
+                        } //Comprueba que no se repite el valor en la fila.
+                        else if (existeFila(valor, fila, matriz)) {
+                            
+                        } //Comprueba que no se repite el valor en la columna.
+                        else if (existeColumna(valor, columna, matriz)) {
+                            
+                        } //Comprueba que el valor no existe en la caja.
+                        else if (existeCaja(valor, fila, columna, matriz)) {
+                            
+                        } //Introducimos el valor a la matriz.
+                        else {
+                            matriz[(fila)][(columna)] = valor;
+                        }
                     }
                 }
+                
                 break;
         }
         return matriz;
@@ -386,9 +404,6 @@ public class App {
                 sudoku = cargarJuego(nivel);
                 mensaje("SUDOKU NIVEL " + nivel);
             }
-
-
         }
-
     }
 }
