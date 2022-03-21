@@ -50,7 +50,7 @@ public class Sudoku_Codigo {
                 matriz[8][8] = 9;
             
             // Número para solucion del tablero:
-                matriz[0][2] = 4;
+            /*    matriz[0][2] = 4;
                 matriz[0][3] = 6;
                 matriz[0][5] = 8;
                 matriz[0][6] = 9;
@@ -108,7 +108,7 @@ public class Sudoku_Codigo {
                 matriz[8][2] = 5;
                 matriz[8][3] = 2;
                 matriz[8][5] = 6;
-                matriz[8][6] = 1;  
+                matriz[8][6] = 1;  */
 
                 break;
 
@@ -140,7 +140,7 @@ public class Sudoku_Codigo {
                 matriz[8][7] = 1;
             
             // Número para solucion del tablero:
-                matriz[0][0] = 1;
+             /*   matriz[0][0] = 1;
                 matriz[0][1] = 2;
                 matriz[0][2] = 3;
                 matriz[0][5] = 9;
@@ -204,7 +204,7 @@ public class Sudoku_Codigo {
                 matriz[8][3] = 8;
                 matriz[8][5] = 4;
                 matriz[8][6] = 3;
-                matriz[8][8] = 6;               
+                matriz[8][8] = 6;    */           
                 
                 break;
             
@@ -246,7 +246,7 @@ public class Sudoku_Codigo {
                 matriz[8][8] = 2;
                
             // Número para solucion del tablero:
-                matriz[0][0] = 4;
+            /*    matriz[0][0] = 4;
                 matriz[0][3] = 3;
                 matriz[0][4] = 9;
                 matriz[0][5] = 2;
@@ -300,7 +300,7 @@ public class Sudoku_Codigo {
                 matriz[8][2] = 7;
                 matriz[8][3] = 5;
                 matriz[8][5] = 6;
-                matriz[8][7] = 4;
+                matriz[8][7] = 4;*/
                 
                 break;
                 
@@ -338,7 +338,7 @@ public class Sudoku_Codigo {
                 matriz[8][7] = 1;
                 
             // Número para solucion del tablero:
-                matriz[0][0] = 4;
+            /*    matriz[0][0] = 4;
                 matriz[0][2] = 2;
                 matriz[0][3] = 7;
                 matriz[0][4] = 8;
@@ -396,7 +396,7 @@ public class Sudoku_Codigo {
                 matriz[8][4] = 2;
                 matriz[8][5] = 8;
                 matriz[8][6] = 9;
-                matriz[8][8] = 4;
+                matriz[8][8] = 4;*/
                 
                 break;
         }

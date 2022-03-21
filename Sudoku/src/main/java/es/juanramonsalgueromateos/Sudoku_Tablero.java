@@ -9,7 +9,7 @@ import javafx.scene.shape.Rectangle;
  */
 public class Sudoku_Tablero {
     
-    public int crearTablero() {
+    public void crearTablero() {
         //Creación de casillas.
         for(int Ex=1; Ex<500; Ex+=167) {
             for(int Ey=1; Ey<500; Ey+=167) {
@@ -28,6 +28,5 @@ public class Sudoku_Tablero {
                 }
             }
         }
-        return 0;
     }
 }

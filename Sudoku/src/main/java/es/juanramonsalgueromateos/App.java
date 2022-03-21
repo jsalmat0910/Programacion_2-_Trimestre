@@ -6,6 +6,9 @@ import java.lang.*;
 import java.util.Random;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
+import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 
 
 /**
@@ -13,19 +16,36 @@ import static javafx.application.Application.launch;
  * @author Juan Ramón Salguero Mateos
  */
 public class App extends Application{
+    
+    // Random para elegir aleatoriamente el nivel.
     Random azar= new Random();
+    
+    // Insertación del codigo de la lógica del juego.
     Sudoku_Codigo codigo = new Sudoku_Codigo();
     
+    // Insertación del codigo de la gráfica del juego.
+    Sudoku_Tablero tablero = new Sudoku_Tablero();
+    
     @Override
-    public void start (Stage stage) throws IOException {
-        //Variables.
-        System.out.println(codigo.nivel);
+    public void start (Stage primaryStage) throws IOException {
+        //System.out.println(codigo.nivel);
+        
+        //Variables del juego.
         BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
         int[][] sudoku = new int[9][9];
         int fila = 0;
         int columna = 0;
         int valor = 0;
-
+        short tamPantallaX = 600;
+        short tamPantallaY = 600;
+    
+        // Creacion de pantalla del juego.
+        //Pane pantalla = new Pane();
+        //Scene scene = new Scene(pantalla, tamPantallaX, tamPantallaY, Color.BLACK);
+        //primaryStage.setTitle("Sudoku");
+        //primaryStage.setScene(scene);
+        //primaryStage.show();
+        
         //Cargamos el juego.
         sudoku = codigo.cargarJuego(codigo.nivel);
 
@@ -33,19 +53,20 @@ public class App extends Application{
             
             //Imprimimos el vector.
             codigo.imprimeVector(sudoku);
-
+            
+            
             //Pedimos los datos.
             System.out.println("Inserte las coordenadas (fila/columna/valor): ");
 
-            //Fila.
+            //Introducir Fila.
             System.out.println("[fila]: ");
             fila = Integer.parseInt(teclado.readLine());
 
-            //Columna.
+            //Introducir Columna.
             System.out.println("[columna]: ");
             columna = Integer.parseInt(teclado.readLine());
 
-            //Valor.
+            //Introducir Valor.
             System.out.println("[valor]: ");
             valor = Integer.parseInt(teclado.readLine());
 
@@ -77,7 +98,7 @@ public class App extends Application{
             }
 
 
-            //Comprueba si se terminó el juego.
+            //Comprueba si se terminó el juego y se reinicia con un tablero nuevo.
             if (codigo.terminado(sudoku)) {
                 codigo.mensaje("FELICIDADES!!!! HAS TERMINADO EL JUEGO!!");
                 codigo.imprimeVector(sudoku);
